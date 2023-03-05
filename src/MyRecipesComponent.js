@@ -23,7 +23,7 @@ function MyRecipesComponent ({label, image, calories,weight, ingredients, digest
       </ul>
       </div>
       <div className="container">
-      <button className="btn_recipe"><a href={link} target="_blank">Recipe</a></button>
+      <button className="btn_recipe"><a href={link} target="_blank" rel="noreferrer">Recipe</a></button>
       </div>
       <div className="container">
         <p>Fat: {digestFat.toFixed()} g</p>
