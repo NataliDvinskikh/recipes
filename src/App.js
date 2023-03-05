@@ -58,7 +58,7 @@ const finalSearch = (e) =>{
       <div className='container'>
         <div className='base'>
         {myRecipes.map(element =>(
-          <MyRecipesComponent
+          <MyRecipesComponent key={element.id}
           label={element.recipe.label}
           image={element.recipe.image}
           calories={element.recipe.calories}
