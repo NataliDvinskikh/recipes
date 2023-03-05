@@ -18,6 +18,7 @@ useEffect(()=> {
   const findRecipe = async() => {
     const response = await fetch (`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}`);
     const data = await response.json();
+    console.log(data.hits);
     setMyRecipes(data.hits);
   }
   findRecipe();
@@ -55,20 +56,20 @@ const finalSearch = (e) =>{
          </form>
       </div>
       <div className='container'>
-      <div className='base'>
-      {myRecipes.map(element =>(
-        <MyRecipesComponent
-        label={element.recipe.label}
-        image={element.recipe.image}
-        calories={element.recipe.calories}
-        weight={element.recipe.totalWeight}
-        ingredients={element.recipe.ingredientLines}
-        digestFat={element.recipe.digest[0].total}
-        digestCarb={element.recipe.digest[1].total}
-        digestProt={element.recipe.digest[2].total}
-        link={element.recipe.shareAs}/>
-      ))}
-      </div>
+        <div className='base'>
+        {myRecipes.map(element =>(
+          <MyRecipesComponent
+          label={element.recipe.label}
+          image={element.recipe.image}
+          calories={element.recipe.calories}
+          weight={element.recipe.totalWeight}
+          ingredients={element.recipe.ingredientLines}
+          digestFat={element.recipe.digest[0].total}
+          digestCarb={element.recipe.digest[1].total}
+          digestProt={element.recipe.digest[2].total}
+          link={element.recipe.shareAs}/>
+        ))}
+        </div>
       </div>
     </div>
   );

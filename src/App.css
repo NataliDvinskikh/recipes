@@ -1,9 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: 'Bodoni Moda', serif;
 }
 
@@ -72,6 +69,23 @@ video {
   border: none;
 }
 
+.btn_recipe {
+  padding-bottom: 6px;
+  padding-top: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgb(59,90,40,.6);
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -89,4 +103,17 @@ li {
   width: 250px;
   height: 250px;
   border-radius: 10px;
+}
+
+
+@media all and (max-width:900px) {
+  .base {
+    width: 60%;
+  }
+}
+
+@media all and (max-width:700px) {
+  .base {
+    width: 80%;
+  }
 }

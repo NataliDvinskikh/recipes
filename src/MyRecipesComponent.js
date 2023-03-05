@@ -8,7 +8,7 @@ function MyRecipesComponent ({label, image, calories,weight, ingredients, digest
       <div className="container">
         <img className="photoFood" src={image} alt="im"/>
       </div>
-      <link to={link}/>
+
       <div className="container">
         <p>{calories.toFixed()} calories</p>
       </div>
@@ -21,6 +21,9 @@ function MyRecipesComponent ({label, image, calories,weight, ingredients, digest
             <li>{ingredient}</li>
         ))}
       </ul>
+      </div>
+      <div className="container">
+      <button className="btn_recipe"><a href={link} target="_blank">Recipe</a></button>
       </div>
       <div className="container">
         <p>Fat: {digestFat.toFixed()} g</p>
