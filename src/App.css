@@ -7,6 +7,22 @@ body {
   font-family: 'Bodoni Moda', serif;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+.base {
+  margin-top: 10px;
+  background-color: rgb(219,236,196,.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  border-radius: 10px ;
+}
+
 h1 {
   margin: 10px;
   font-size: 40px;
@@ -14,7 +30,7 @@ h1 {
 
 .name {
   color:#3b5a28;
-  font-size: 30px;
+  font-size: 20px;
 
 }
 
@@ -25,14 +41,11 @@ video {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; 
+  z-index: -1;
+  opacity: 0.8;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  margin: 5px;
-}
+
 
 .icons {
   width: 35px;
@@ -53,10 +66,12 @@ video {
 }
 
 .btn {
-  margin-left: 55px;
+  margin-top: 5px;
+  margin-left: 70px;
   background-color: transparent;
   border: none;
 }
+
 ul {
   list-style: none;
   padding: 0;
@@ -64,7 +79,8 @@ ul {
 }
 
 li {
-  background-color: #dbecc4;
+  background-color: rgb(219,236,196,.6);
+  border-radius: 10px;
   padding: 5px;
   margin: 5px;
 }
@@ -72,4 +88,5 @@ li {
 .photoFood {
   width: 250px;
   height: 250px;
+  border-radius: 10px;
 }

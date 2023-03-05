@@ -13,15 +13,15 @@ function App() {
   const [myRecipes,setMyRecipes] = useState ([]);
   const [wordSubmitted,setWordSubmitted] = useState('');
 
-  useEffect(()=>{
-    findRecipe();
-  },[wordSubmitted])
 
-async function findRecipe () {
-const response = await fetch (`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}`);
-const data = await response.json();
-setMyRecipes(data.hits);
-}
+useEffect(()=> {
+  const findRecipe = async() => {
+    const response = await fetch (`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}`);
+    const data = await response.json();
+    setMyRecipes(data.hits);
+  }
+  findRecipe();
+},[wordSubmitted]);
 
 const myRecipeSearch = (e) => {
 setMySearch(e.target.value);
@@ -48,11 +48,14 @@ const finalSearch = (e) =>{
           <input className='search' placeholder='Search...' onChange={myRecipeSearch} value={mySearch}>
           </input>
         </form>
+        <form onSubmit={finalSearch}>
           <button className='btn'>
             <img src = "https://img.icons8.com/pastel-glyph/512/refresh-love--v2.png" className='icons' alt="icon"/>
           </button>
-        </div>
-
+         </form>
+      </div>
+      <div className='container'>
+      <div className='base'>
       {myRecipes.map(element =>(
         <MyRecipesComponent
         label={element.recipe.label}
@@ -62,9 +65,11 @@ const finalSearch = (e) =>{
         ingredients={element.recipe.ingredientLines}
         digestFat={element.recipe.digest[0].total}
         digestCarb={element.recipe.digest[1].total}
-        digestProt={element.recipe.digest[2].total}/>
+        digestProt={element.recipe.digest[2].total}
+        link={element.recipe.shareAs}/>
       ))}
-
+      </div>
+      </div>
     </div>
   );
 }

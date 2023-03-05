@@ -1,4 +1,4 @@
-function MyRecipesComponent ({label, image, calories,weight, ingredients, digestFat, digestCarb, digestProt }) {
+function MyRecipesComponent ({label, image, calories,weight, ingredients, digestFat, digestCarb, digestProt,link }) {
 
   return (
     <div>
@@ -8,6 +8,7 @@ function MyRecipesComponent ({label, image, calories,weight, ingredients, digest
       <div className="container">
         <img className="photoFood" src={image} alt="im"/>
       </div>
+      <link to={link}/>
       <div className="container">
         <p>{calories.toFixed()} calories</p>
       </div>
