@@ -28,7 +28,7 @@ h1 {
 .name {
   color:#3b5a28;
   font-size: 20px;
-
+ margin-left: 20px;
 }
 
 video {
@@ -59,7 +59,8 @@ video {
   color: #575756;
   box-shadow: inset 0px 0px 0px 4px #ddd6e8;
   margin-right: 20px;
-  border: none;
+  border: #ddd6e8;
+  border-radius: 5px;
 }
 
 .btn {
