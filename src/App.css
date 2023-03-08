@@ -57,7 +57,8 @@ video {
   font-size: 14px;
   line-height: 5px;
   color: #575756;
-  -webkit-box-shadow: inset 0px 0px 0px 4px #ddd6e8;
+  box-shadow: inset 0px 0px 0px 4px #ddd6e8;
+  -webkit-appearance: none;
   margin-right: 20px;
   border: #ddd6e8;
   border-radius: 5px;
